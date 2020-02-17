@@ -16,16 +16,16 @@ class ProductProvider extends Component {
         this.setProducts();
     }
 
-    setProducts = () => {
-        let tempProducts = [];
-        storeProducts.forEach(item => {
-            const singleItem = {...item};
-            tempProducts = [...tempProducts, singleItem];
+    setProducts = () =>{
+        let products = [];
 
-        })
-        this.setState(()=> {
-            return {products:tempProducts}
-        })
+        storeProducts.forEach(product => {
+            const singleProduct = {...product};
+            products = [...products, singleProduct];
+
+        });
+
+        this.setState({ products });
     }
 
     getItem = id =>{
@@ -50,7 +50,7 @@ class ProductProvider extends Component {
         return (
             <ProductContext.Provider value={{
                 ...this.state,
-                handleDetail:this.handleDetail,
+
                 addToCart:this.addToCart
             }}>
                 {this.props.children}

@@ -6,8 +6,11 @@ export default class Product extends Component {
     render() {
         const {id, title, img, info, price, inCart} = this.props.product;
         return (
-            <div className="card">
-                <ProductConsumer>
+        
+            <ProductConsumer>
+            {(value)=>(
+                <div className="card">
+
                     <div className="card-left">
                         <img src={img} alt="image" className="card-img"/>
                     </div>
@@ -24,8 +27,10 @@ export default class Product extends Component {
                          onClick={()=> value.addToCart(id)}>Add To Basket</button>
 
                     </div>
-                </ProductConsumer>
-            </div>
+                    </div>
+            )}
+            </ProductConsumer>
+            
         )
     }
 }

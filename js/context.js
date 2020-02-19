@@ -9,7 +9,8 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
     state = {
         products: [],
-        cart:[]
+        cart:[],
+        cartTotal: 0
     }
 
     componentDidMount() {
@@ -38,11 +39,39 @@ class ProductProvider extends Component {
         const index = tempProducts.indexOf(this.getItem(id));
         const product = tempProducts[index];
         product.inCart = true;
-        const price = product.price;
-        product.total=price;
         this.setState(()=> {
             return{products: tempProducts, cart: [...this.state.cart, product]}
-        },()=> {console.log(this.state)})
+        },()=> {this.addTotal()})
+    }
+
+    removeItem = (id) => {
+        let tempProducts = [...this.state.products];
+        let tempCart = [...this.state.cart];
+        tempCart=tempCart.filter(item => item.id !== id)
+
+        const index = tempProducts.indexOf(this.getItem(id))
+        let removedProduct = tempProducts[index];
+        removedProduct.inCart=false;
+
+        this.setState(()=>{
+            return {
+            cart:[...tempCart],
+            products:[...tempProducts]
+            }
+        },() => {
+            this.addTotal();
+        } )
+    }
+
+    addTotal = () =>{
+        let total =0;
+        this.state.cart.map(item => (total += item.price))
+        this.setState(()=>{
+            return{
+                cartTotal:total
+            }
+        })
+
     }
 
 
@@ -50,8 +79,8 @@ class ProductProvider extends Component {
         return (
             <ProductContext.Provider value={{
                 ...this.state,
-
-                addToCart:this.addToCart
+                addToCart:this.addToCart,
+                removeItem:this.removeItem
             }}>
                 {this.props.children}
             </ProductContext.Provider>

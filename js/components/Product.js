@@ -9,8 +9,8 @@ export default class Product extends Component {
         
             <ProductConsumer>
             {(value)=>(
+                
                 <div className="card">
-
                     <div className="card-left">
                         <img src={img} alt="image" className="card-img"/>
                     </div>
@@ -27,7 +27,7 @@ export default class Product extends Component {
                          onClick={()=> value.addToCart(id)}>Add To Basket</button>
 
                     </div>
-                    </div>
+                </div>
             )}
             </ProductConsumer>
             

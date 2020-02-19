@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import {storeProducts} from './data'
 
+//Context API
+
 const ProductContext = React.createContext();
+
 //Provider
-
-//Consumer
-
 class ProductProvider extends Component {
     state = {
         products: [],
@@ -16,7 +16,7 @@ class ProductProvider extends Component {
     componentDidMount() {
         this.setProducts();
     }
-
+    //Setting products
     setProducts = () =>{
         let products = [];
 
@@ -29,11 +29,13 @@ class ProductProvider extends Component {
         this.setState({ products });
     }
 
+    //Finding the product
     getItem = id =>{
         const product = this.state.products.find(item => item.id === id);
         return product;
     }
 
+    //Adding product to the bascet
     addToCart = (id) => {
         let tempProducts = [...this.state.products];
         const index = tempProducts.indexOf(this.getItem(id));
@@ -44,6 +46,7 @@ class ProductProvider extends Component {
         },()=> {this.addTotal()})
     }
 
+    //Removing the product from the basket
     removeItem = (id) => {
         let tempProducts = [...this.state.products];
         let tempCart = [...this.state.cart];
@@ -62,7 +65,7 @@ class ProductProvider extends Component {
             this.addTotal();
         } )
     }
-
+    //Counting the total
     addTotal = () =>{
         let total =0;
         this.state.cart.map(item => (total += item.price))
@@ -73,8 +76,6 @@ class ProductProvider extends Component {
         })
 
     }
-
-
     render() {
         return (
             <ProductContext.Provider value={{
@@ -90,6 +91,7 @@ class ProductProvider extends Component {
     }
 }
 
+//Consumer
 
 const ProductConsumer = ProductContext.Consumer;
 

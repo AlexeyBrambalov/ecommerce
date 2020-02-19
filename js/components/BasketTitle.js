@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function BasketTitle() {
     return (
-        <h1 className="basket__title">Basket</h1>
+        <h1 className="basket-title">Basket</h1>
     )
 }

@@ -10,16 +10,16 @@ export default class Navbar extends Component {
             <React.Fragment>
 
                     <nav className="navbar">
-                        <ul className="navbar__list">
-                            <li className="navbar__list__pic"><img src={tele} alt="tel"/></li>
-                            <li className="navbar__list__item">1337 1337 1337</li>
-                            <li className="navbar__list__pic"><img src={flag} alt="flag"/></li>
-                            <li className="navbar__list__item">Try Another Castle</li>
+                        <ul className="navbar-list">
+                            <li className="navbar-list-pic"><img src={tele} alt="tel"/></li>
+                            <li className="navbar-list-item">1337 1337 1337</li>
+                            <li className="navbar-list-pic"><img src={flag} alt="flag"/></li>
+                            <li className="navbar-list-item">Try Another Castle</li>
                         </ul>         
                     </nav>
                     
                     <div className="main"> 
-                        <img src={logo} className="main__logo" alt="logo"/>
+                        <img src={logo} className="main-logo" alt="logo"/>
                     </div>
 
             </React.Fragment>   

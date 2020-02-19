@@ -19,7 +19,7 @@ export default class Basket extends Component {
                                 <BasketList value={value}/>
                                 <BasketTotal value={value}/>
                                 <Link to="/cart">
-                                    <button className="basket__button">Continue</button>
+                                    <button className="basket-button button">Continue</button>
                                 </Link>
                             </div>
 
@@ -28,7 +28,7 @@ export default class Basket extends Component {
                         return (
                                 <div className="basket">
                                     <EmptyBasket/>
-                                    <button className="basket__button inactive">Continue</button>
+                                    <button className="basket-button button inactive">Continue</button>
                                 </div>
                         )
                     }

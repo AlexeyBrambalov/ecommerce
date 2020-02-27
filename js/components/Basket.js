@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import EmptyBasket from './EmptyBasket'
 import {ProductConsumer} from '../context'
 import BasketList from './BasketList'
-import {Link} from 'react-router-dom'
 
 
 export default class Basket extends Component {

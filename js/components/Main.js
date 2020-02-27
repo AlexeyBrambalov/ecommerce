@@ -22,7 +22,7 @@ export default class Main extends Component {
                         <div className="basket-wrapper">
                             <BasketTitle/>
                             <Basket/>
-                            <div className="basket">
+                            <div className="basket-button-area">
                                 <Link to="/cart">
                                     <button className="basket-button button">Continue</button>
                                 </Link>
@@ -39,7 +39,7 @@ export default class Main extends Component {
                         <div className="basket-wrapper">
                             <BasketTitle/>
                             <Basket/>
-                            <div className="basket">
+                            <div className="basket-button-area">
                                 <button className="basket-button button inactive">Continue</button>
                             </div> 
                         </div>

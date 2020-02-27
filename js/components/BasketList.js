@@ -15,7 +15,7 @@ export default function BasketList({value}) {
             <div className="basket-total price">
             <h4 className="basket-total-text">Total</h4>
             <div className="basket-total-price">{cartTotal} Gil</div>
-        </div>
+            </div>
         </React.Fragment>
     )
 }

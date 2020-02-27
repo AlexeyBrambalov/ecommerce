@@ -35,6 +35,10 @@ $green: #4ad87f;
 	width: 30vw;
 	background-color: $green;
 	margin-right: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 //Navbar
@@ -84,6 +88,21 @@ $green: #4ad87f;
 .basket{
 	background-color: $green;
 	width: 100%;
+	height: 65vh;	
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+
+}
+
+.basket-button-area{
+	background-color: $green;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 25vh;
 }
 
 
@@ -101,10 +120,10 @@ $green: #4ad87f;
 
 }
 .basket-button{
-	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-bottom: 0px;
+	width: 24vw;
+	margin-left: 3vw;
+	margin-right: 3vw;
+
 }
 
 
@@ -198,7 +217,7 @@ $green: #4ad87f;
 
 .card-right{
 	padding: 0 20px;
-	margin: 0;
+
 }
 
 .card-title{
